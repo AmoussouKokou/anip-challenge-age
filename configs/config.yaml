@@ -1,0 +1,24 @@
+paths:
+  data_dir: "data"
+  train_dir: "data/train"
+  test_dir: "data/test"
+  outputs_dir: "outputs"
+  figures_dir: "outputs/figures"
+
+model:
+  insightface_name: "buffalo_l"   # ex: buffalo_l (ArcFace r100-ibn), antelopev2, buffalo_m, buffalo_s, buffalo_sc
+  ctx_id: 0                       # GPU: 0 ; CPU: -1
+  det_size: [640, 640]            # taille d'entrée du détecteur ex : [960,960]
+
+dev_eval:
+  dev_ratio: 0.2                  # 20% des identités pour validation
+  random_seed: 42
+
+matching:
+  solver: "hungarian"             # "hungarian" ou "blossom"
+  block_size: 0                   # 0 = full matrix ; sinon calcul par blocs (mémoire faible)
+  export_filename: "tache1_submission.csv"
+
+logging:
+  verbose: true
+  save_figures: true
